@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshitha Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <h1>Akshitha Boragala</h1>
+
+    <p>Python Developer | Web Developer | CSE Student</p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h2>Building Creative & Real-Time Applications</h2>
+
+    <p>
+      Passionate about developing responsive websites,
+      real-time applications, and modern web projects.
+    </p>
+
+    <button onclick="scrollToProjects()">
+      View Projects
+    </button>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="about-section">
+
+    <div class="card" id="about">
+
+      <h2>About Me</h2>
+
+      <p>
+        I’m <b>Akshitha Boragala</b>, a passionate Python and Web Developer.
+      </p>
+
+      <br>
+
+      <p>
+        I enjoy building creative projects and learning modern technologies.
+      </p>
+
+    </div>
+
+    <div class="card">
+
+      <h2>My Skills</h2>
+
+      <div class="skills-list">
+
+        <div class="skill">Python</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">GitHub</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+
+        <h3>Real-Time Collaborative Code Editor</h3>
+
+        <p>
+          A modern web application where multiple users can write
+          and edit code together in real time.
+        </p>
+
+        <ul>
+          <li>Live code synchronization</li>
+          <li>Real-time collaboration</li>
+          <li>HTML, CSS & JavaScript based</li>
+          <li>Responsive UI</li>
+        </ul>
+
+      </div>
+
+      <div class="project-card">
+
+        <h3>Portfolio</h3>
+
+        <p>
+          A personal portfolio showcasing my skills and projects.
+        </p>
+
+        <ul>
+          <li>Responsive design</li>
+          <li>Modern UI/UX</li>
+          <li>Interactive sections</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <h2>Get In Touch</h2>
+
+    <form onsubmit="sendMessage(event)">
+
+      <input type="text" placeholder="Your Name" required>
+
+      <input type="email" placeholder="Your Email" required>
+
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>
+      © 2026 Akshitha Boragala
+    </p>
+
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
