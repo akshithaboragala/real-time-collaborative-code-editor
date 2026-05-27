@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://127.0.0.1:5000/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Real-Time Code Editor</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+        textarea {
+            width: 80%;
+            height: 400px;
+            margin-top: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Real-Time Collaborative Code Editor</h2>
+
+<input id="room" placeholder="Enter Room ID">
+<button onclick="joinRoom()">Join Room</button>
+
+<br><br>
+
+<textarea id="editor" placeholder="Start coding..."></textarea>
+
+<script src="./Real-Time Code Editor1_files/socket.io.min.js.download"></script>
+<script>
+const socket = io();
+let roomId = "";
+
+function joinRoom() {
+    roomId = document.getElementById("room").value;
+    socket.emit("join-room", roomId);
+    alert("Joined Room: " + roomId);
+}
+
+const editor = document.getElementById("editor");
+
+editor.addEventListener("keyup", () => {
+    socket.emit("code-change", {
+        room: roomId,
+        code: editor.value
+    });
+});
+
+socket.on("code-update", (code) => {
+    editor.value = code;
+});
+</script>
+
+
+</body></html>

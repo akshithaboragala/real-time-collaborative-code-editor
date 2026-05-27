@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Code Editor</title>
+</head>
+<body>
+
+<h2>Real-Time Collaborative Code Editor</h2>
+
+<input id="room" placeholder="Enter Room ID">
+<button onclick="joinRoom()">Join</button>
+
+<br><br>
+
+<textarea id="code" rows="20" cols="80" placeholder="Write code..."></textarea>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+<script>
+var socket = io();
+var room = "";
+
+function joinRoom(){
+    room = document.getElementById("room").value;
+    socket.emit("join", {room: room});
+}
+
+document.getElementById("code").addEventListener("keyup", function(){
+    socket.emit("code_change", {
+        room: room,
+        code: this.value
+    });
+});
+
+socket.on("update_code", function(code){
+    document.getElementById("code").value = code;
+});
+</script>
+
+</body>
+</html>
